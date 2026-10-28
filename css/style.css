@@ -1,0 +1,1914 @@
+
+/* ======================================================
+   GALA CHARRA IMPERIAL
+   XV AÑOS DE MARIA SAMYRETH JARAMILLO OROZCO
+   DISEÑO WEB PREMIUM · HOJA DE ESTILOS COMPLETA
+====================================================== */
+
+/* ======================================================
+   01. VARIABLES Y ESTILOS GENERALES
+====================================================== */
+
+:root {
+  --negro: #100b10;
+  --negro-profundo: #09070a;
+  --negro-suave: #20131c;
+
+  --vino: #641e38;
+  --vino-oscuro: #390e23;
+  --vino-claro: #a14a69;
+
+  --oro: #c8a267;
+  --oro-oscuro: #90652f;
+  --oro-claro: #f1dbaf;
+  --oro-brillante: #fff0c8;
+
+  --marfil: #f3e8d8;
+  --gris: #bdafa4;
+
+  --fuente-elegante: "Cormorant Garamond", Georgia, serif;
+  --fuente-cursiva: "Great Vibes", cursive;
+  --fuente-moderna: "Montserrat", Arial, sans-serif;
+
+  --transicion: cubic-bezier(.22, 1, .36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  color: var(--marfil);
+  background: var(--negro);
+  font-family: var(--fuente-elegante);
+  -webkit-font-smoothing: antialiased;
+}
+
+body.bloqueado {
+  overflow: hidden;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--oro-claro);
+  outline-offset: 5px;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--vino-claro);
+  color: white;
+}
+
+/* Fondo general de lujo */
+
+#invitacion {
+  position: relative;
+  min-height: 100vh;
+  overflow: clip;
+  background:
+    radial-gradient(
+      ellipse at 50% 10%,
+      rgba(113, 37, 62, .16),
+      transparent 40%
+    ),
+    var(--negro);
+}
+
+/* ======================================================
+   02. TIPOGRAFÍA Y COMPONENTES
+====================================================== */
+
+.contenedor {
+  width: min(100%, 1080px);
+  margin-inline: auto;
+}
+
+.microtitulo {
+  margin: 0;
+  color: var(--oro);
+  font-family: var(--fuente-moderna);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.9;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+}
+
+.titulo-seccion {
+  margin: 18px auto 28px;
+  font-family: var(--fuente-elegante);
+  font-weight: 400;
+  font-size: clamp(49px, 7vw, 82px);
+  line-height: 1.07;
+  letter-spacing: -.025em;
+  color: var(--marfil);
+}
+
+.titulo-seccion em {
+  display: block;
+  margin-top: 4px;
+  color: var(--oro-claro);
+  font-family: var(--fuente-cursiva);
+  font-size: clamp(63px, 9vw, 110px);
+  line-height: 1.1;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+}
+
+.texto-elegante {
+  max-width: 700px;
+  margin: 22px auto;
+  color: var(--marfil);
+  font-family: var(--fuente-elegante);
+  font-size: clamp(24px, 3.5vw, 34px);
+  font-weight: 400;
+  line-height: 1.48;
+}
+
+.seccion {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(90px, 11vw, 150px) 24px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.separador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 26px auto;
+  color: var(--oro);
+  font-size: 16px;
+}
+
+.separador::before,
+.separador::after {
+  content: "";
+  display: block;
+  width: clamp(55px, 8vw, 110px);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(237, 200, 139, .9)
+  );
+}
+
+.separador::after {
+  transform: rotate(180deg);
+}
+
+/* ======================================================
+   03. TEXTURAS Y REFLEJOS METÁLICOS
+====================================================== */
+
+.portada,
+.mensaje,
+.fecha,
+.ubicaciones,
+.galeria-seccion,
+.regalos,
+.confirmacion {
+  position: relative;
+}
+
+.portada::selection,
+.titulo-seccion::selection {
+  color: white;
+}
+
+.portada::before,
+.mensaje::before,
+.regalos::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background-image:
+    repeating-linear-gradient(
+      115deg,
+      transparent 0,
+      transparent 3px,
+      rgba(255, 235, 200, .012) 4px,
+      transparent 5px
+    );
+
+  opacity: .55;
+}
+
+/* ======================================================
+   04. BORDADOS CHARROS Y ROSAS SVG
+====================================================== */
+
+.decoracion-charra {
+  position: absolute;
+  z-index: 2;
+  width: clamp(100px, 17vw, 235px);
+  height: auto;
+  color: var(--oro);
+  opacity: .72;
+  pointer-events: none;
+  filter: drop-shadow(0 0 8px rgba(201, 158, 87, .24));
+}
+
+.decoracion-charra use {
+  pointer-events: none;
+}
+
+.esquina-si {
+  top: 22px;
+  left: 22px;
+}
+
+.esquina-sd {
+  top: 22px;
+  right: 22px;
+  transform: scaleX(-1);
+}
+
+.esquina-ii {
+  bottom: 22px;
+  left: 22px;
+  transform: scaleY(-1);
+}
+
+.esquina-id {
+  bottom: 22px;
+  right: 22px;
+  transform: rotate(180deg);
+}
+
+.flor-svg {
+  position: absolute;
+  z-index: 4;
+  width: clamp(100px, 17vw, 205px);
+  height: auto;
+  pointer-events: none;
+  filter:
+    drop-shadow(0 12px 12px rgba(0, 0, 0, .65))
+    drop-shadow(0 0 14px rgba(127, 33, 60, .28));
+}
+
+.flor-izquierda {
+  left: -35px;
+  bottom: 7%;
+  transform: rotate(-26deg);
+}
+
+.flor-derecha {
+  right: -37px;
+  top: 19%;
+  transform: rotate(24deg) scaleX(-1);
+}
+
+/* ======================================================
+   05. PANTALLA DE BIENVENIDA
+====================================================== */
+
+.bienvenida {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: grid;
+  place-items: center;
+  padding: 24px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 43%,
+      #502039 0%,
+      #24131e 40%,
+      #0b080c 78%
+    );
+
+  transition:
+    opacity 1s ease,
+    visibility 1s ease;
+}
+
+.bienvenida::before {
+  content: "";
+  position: absolute;
+  inset: 20px;
+  z-index: 0;
+  border: 1px solid rgba(200, 162, 103, .28);
+  pointer-events: none;
+}
+
+.bienvenida::after {
+  content: "";
+  position: absolute;
+  inset: 31px;
+  border: 1px solid rgba(200, 162, 103, .12);
+  pointer-events: none;
+}
+
+.bienvenida.desaparecer {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.bienvenida-resplandor {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  width: min(70vw, 550px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  background: rgba(182, 123, 62, .2);
+  filter: blur(85px);
+  animation: resplandorSuave 6s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.bienvenida-contenido {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 520px);
+  text-align: center;
+}
+
+.bienvenida-titulo {
+  margin: 8px 0 25px;
+  color: var(--oro-claro);
+  font-family: var(--fuente-cursiva);
+  font-size: clamp(52px, 10vw, 90px);
+  font-weight: 400;
+  line-height: 1.18;
+  text-shadow:
+    0 4px 18px rgba(0, 0, 0, .5),
+    0 0 28px rgba(200, 162, 103, .3);
+}
+
+.bienvenida .separador {
+  margin: 8px auto 34px;
+}
+
+.instruccion {
+  margin: 45px auto 0;
+  color: var(--marfil);
+  font-family: var(--fuente-moderna);
+  font-size: 10px;
+  line-height: 1.8;
+  letter-spacing: .17em;
+}
+
+.bienvenida-fecha {
+  margin: 15px auto 0;
+  color: var(--oro);
+  font-family: var(--fuente-moderna);
+  font-size: 10px;
+  letter-spacing: .23em;
+}
+
+/* ======================================================
+   06. SOBRE NEGRO Y SELLO DE CERA
+====================================================== */
+
+.sobre {
+  position: relative;
+  display: block;
+
+  width: min(360px, 83vw);
+  height: 235px;
+  margin: auto;
+  padding: 0;
+
+  border: 1px solid var(--oro);
+  border-radius: 4px;
+
+  background: #21151d;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, .75),
+    0 0 45px rgba(200, 162, 103, .2);
+
+  transition: transform .4s var(--transicion);
+}
+
+.sobre:not(:disabled):hover {
+  transform: translateY(-5px);
+}
+
+.sobre-fondo {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, #4c2e3a, #1b1118);
+}
+
+.carta {
+  position: absolute;
+  top: 13%;
+  left: 10%;
+  z-index: 2;
+
+  display: grid;
+  place-items: center;
+
+  width: 80%;
+  height: 78%;
+  padding: 10px;
+
+  border: 1px solid #b3935e;
+  background:
+    radial-gradient(
+      ellipse at 50% 50%,
+      #fff2dd,
+      #e7d4b5
+    );
+
+  box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
+  color: #43202a;
+
+  transition:
+    transform 1.4s var(--transicion) .35s;
+}
+
+.carta-borde {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  border: 1px solid rgba(142, 102, 54, .5);
+}
+
+.carta-borde strong {
+  color: #7a4b32;
+  font-family: var(--fuente-elegante);
+  font-size: 75px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.carta-nombre {
+  margin-top: 1px;
+  color: #6f3548;
+  font-family: var(--fuente-cursiva);
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+.sobre-frente {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+
+  background:
+    linear-gradient(145deg, #51303e, #1a1118 85%);
+
+  clip-path: polygon(
+    0 0,
+    50% 56%,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+}
+
+.sobre-tapa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+
+  height: 135px;
+
+  background:
+    linear-gradient(#422934, #1a1118);
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    50% 100%
+  );
+
+  transform-origin: top center;
+  backface-visibility: hidden;
+  transition: transform 1.15s ease;
+}
+
+.sello {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 6;
+
+  display: grid;
+  place-items: center;
+
+  width: 76px;
+  height: 76px;
+
+  transform: translate(-50%, -4%);
+
+  border: 4px double #dfbb81;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 28%,
+      #af5974,
+      #6a203d 55%,
+      #370d22 100%
+    );
+
+  color: var(--oro-claro);
+  font-family: var(--fuente-elegante);
+  font-size: 34px;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, .65),
+    inset 0 0 12px rgba(40, 0, 18, .5);
+
+  transition:
+    opacity .5s ease,
+    transform .5s ease;
+}
+
+.sobre.abierto .sobre-tapa {
+  transform: rotateX(180deg);
+}
+
+.sobre.abierto .carta {
+  transform: translateY(-115px);
+}
+
+.sobre.abierto .sello {
+  opacity: 0;
+  transform: translate(-50%, -4%) scale(1.5);
+}
+
+/* ======================================================
+   07. PORTADA CINEMATOGRÁFICA IMPERIAL
+====================================================== */
+
+.portada {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  min-height: 100svh;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: clamp(25px, 4vw, 65px);
+
+  padding:
+    clamp(85px, 8vw, 120px)
+    clamp(32px, 7vw, 130px);
+
+  background:
+    radial-gradient(
+      ellipse at 76% 40%,
+      rgba(123, 41, 69, .47),
+      transparent 46%
+    ),
+    radial-gradient(
+      ellipse at 12% 84%,
+      rgba(163, 109, 49, .14),
+      transparent 45%
+    ),
+    linear-gradient(
+      130deg,
+      #0b080c,
+      #24121d 52%,
+      #0b080c
+    );
+}
+
+.portada > * {
+  min-width: 0;
+}
+
+.portada::after {
+  content: "";
+  position: absolute;
+  inset: 31px;
+  border: 1px solid rgba(200, 162, 103, .34);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.portada-texto {
+  position: relative;
+  z-index: 5;
+  max-width: 620px;
+  margin: auto;
+  text-align: center;
+}
+
+.portada-mis {
+  margin: 0;
+  color: var(--marfil);
+  font-family: var(--fuente-cursiva);
+  font-size: clamp(59px, 7vw, 98px);
+  font-weight: 400;
+  line-height: .95;
+}
+
+.portada-xv {
+  margin: 12px 0 10px;
+  font-family: var(--fuente-elegante);
+  font-size: clamp(110px, 13vw, 195px);
+  font-weight: 500;
+  line-height: .82;
+  letter-spacing: -.05em;
+
+  background: linear-gradient(
+    135deg,
+    #fff0c8 5%,
+    #cba66d 35%,
+    #91642f 58%,
+    #f4dba9 82%,
+    #a8773d 100%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  filter: drop-shadow(0 7px 13px rgba(0, 0, 0, .3));
+}
+
+.portada-nombre {
+  margin: 20px 0 6px;
+  color: var(--oro-claro);
+  font-family: var(--fuente-cursiva);
+  font-size: clamp(62px, 8vw, 112px);
+  font-weight: 400;
+  line-height: 1.08;
+
+  text-shadow:
+    0 4px 18px rgba(0, 0, 0, .4),
+    0 0 35px rgba(211, 158, 78, .25);
+}
+
+.portada-apellidos {
+  margin: 5px auto 0;
+  color: var(--marfil);
+  font-family: var(--fuente-moderna);
+  font-size: clamp(10px, 1.1vw, 13px);
+  font-weight: 500;
+  letter-spacing: .36em;
+  line-height: 1.9;
+}
+
+.portada-fecha {
+  margin: 30px 0 0;
+  color: var(--oro);
+  font-family: var(--fuente-moderna);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.9;
+  letter-spacing: .19em;
+}
+
+.deslizar {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 9px;
+
+  margin-top: 35px;
+  padding: 10px 15px;
+
+  color: var(--oro-claro);
+  font-family: var(--fuente-moderna);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .18em;
+
+  transition: color .3s;
+}
+
+.deslizar:hover {
+  color: white;
+}
+
+.deslizar span {
+  font-size: 24px;
+  animation: flechaSuave 2.6s ease-in-out infinite;
+}
+
+/* ======================================================
+   08. RETRATO DE LA QUINCEAÑERA
+====================================================== */
+
+.ilustracion {
+  position: relative;
+  z-index: 3;
+
+  width: min(100%, 530px);
+  aspect-ratio: 3 / 4.5;
+  margin-inline: auto;
+
+  overflow: hidden;
+
+  border: 2px solid #b78b51;
+  border-radius: 47% 47% 4px 4px / 25% 25% 4px 4px;
+
+  background:
+    radial-gradient(circle, #542239, #160d14);
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, .76),
+    0 0 60px rgba(181, 129, 58, .18);
+}
+
+.ilustracion::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  z-index: 3;
+  border: 1px solid rgba(237, 204, 147, .54);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.ilustracion::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, .1),
+      transparent 40%,
+      rgba(17, 8, 15, .45)
+    );
+
+  pointer-events: none;
+}
+
+.ilustracion img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 45%;
+  transform: scale(1.45);
+
+  transition:
+    transform 7s cubic-bezier(.2, .65, .2, 1);
+}
+
+.portada.revelada .ilustracion img {
+  transform: scale(1);
+}
+
+.ilustracion-fondo {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  background:
+    radial-gradient(circle, #58243d, #100b10 70%);
+}
+
+.ilustracion-fondo strong {
+  color: var(--oro-claro);
+  font-size: 145px;
+  font-weight: 400;
+}
+
+.ilustracion-fondo p {
+  color: var(--oro);
+  font-family: var(--fuente-cursiva);
+  font-size: 44px;
+}
+
+/* ======================================================
+   09. DEDICATORIA
+====================================================== */
+
+.mensaje {
+  background:
+    radial-gradient(
+      ellipse at 50% 55%,
+      rgba(98, 30, 56, .35),
+      transparent 60%
+    ),
+    linear-gradient(
+      #100b10,
+      #27141e 50%,
+      #100b10
+    );
+}
+
+.mensaje-marco {
+  position: relative;
+  max-width: 800px;
+  margin: 38px auto 0;
+  padding: 62px 38px;
+
+  border-top: 1px solid rgba(200, 162, 103, .68);
+  border-bottom: 1px solid rgba(200, 162, 103, .68);
+}
+
+.mensaje-marco::before,
+.mensaje-marco::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130px;
+  height: 1px;
+  background: var(--oro);
+}
+
+.mensaje-marco::before {
+  top: -5px;
+}
+
+.mensaje-marco::after {
+  bottom: -5px;
+}
+
+.mensaje-emblema {
+  width: 135px;
+  height: 78px;
+  margin: 0 auto 20px;
+}
+
+/* ======================================================
+   10. FECHA Y CUENTA REGRESIVA
+====================================================== */
+
+.fecha {
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(125, 52, 62, .19),
+      transparent 65%
+    ),
+    #100b10;
+}
+
+.fecha-grande {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(15px, 4vw, 42px);
+  margin: 40px auto 22px;
+}
+
+.fecha-numero {
+  color: var(--oro-claro);
+  font-size: clamp(115px, 20vw, 205px);
+  font-weight: 400;
+  line-height: .9;
+  letter-spacing: -.07em;
+}
+
+.fecha-datos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.fecha-datos span {
+  color: var(--marfil);
+  font-size: clamp(25px, 4vw, 49px);
+  line-height: 1.2;
+  letter-spacing: .06em;
+}
+
+.fecha-datos strong {
+  color: var(--oro);
+  font-size: clamp(50px, 6vw, 80px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.fecha-localidad {
+  margin: 18px auto;
+  color: var(--gris);
+  font-family: var(--fuente-moderna);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 2;
+  letter-spacing: .15em;
+}
+
+.contador {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+
+  width: min(100%, 640px);
+  margin: 38px auto 0;
+}
+
+.contador > div {
+  padding: 23px 7px;
+
+  border: 1px solid rgba(200, 162, 103, .45);
+  background:
+    linear-gradient(
+      150deg,
+      rgba(92, 38, 58, .25),
+      rgba(14, 8, 13, .8)
+    );
+}
+
+.contador strong {
+  display: block;
+  color: var(--oro-claro);
+  font-size: clamp(29px, 5vw, 54px);
+  line-height: 1.15;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+.contador span {
+  display: block;
+  margin-top: 8px;
+
+  color: var(--gris);
+  font-family: var(--fuente-moderna);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .12em;
+}
+
+/* ======================================================
+   11. CEREMONIA Y RECEPCIÓN
+====================================================== */
+
+.ubicaciones {
+  background:
+    radial-gradient(
+      ellipse at 50% 40%,
+      rgba(100, 30, 56, .3),
+      transparent 70%
+    ),
+    #100b10;
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 52px;
+}
+
+.tarjeta {
+  position: relative;
+  isolation: isolate;
+
+  min-height: 470px;
+  padding: 62px 28px 48px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(218, 180, 116, .72);
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(115, 42, 69, .48),
+      transparent 60%
+    ),
+    linear-gradient(
+      150deg,
+      #271720,
+      #110c11
+    );
+
+  box-shadow:
+    0 25px 65px rgba(0, 0, 0, .42);
+
+  transition:
+    transform .45s var(--transicion),
+    box-shadow .45s var(--transicion);
+}
+
+.tarjeta::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  z-index: -1;
+
+  border: 1px solid rgba(200, 162, 103, .28);
+  pointer-events: none;
+}
+
+.tarjeta:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 30px 78px rgba(0, 0, 0, .62),
+    0 0 25px rgba(200, 162, 103, .13);
+}
+
+.tarjeta-adorno {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  z-index: 0;
+
+  width: 155px;
+  height: 155px;
+  opacity: .36;
+  pointer-events: none;
+}
+
+.tarjeta > :not(.tarjeta-adorno) {
+  position: relative;
+  z-index: 1;
+}
+
+.tarjeta-icono {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--oro-claro);
+  font-size: 43px;
+}
+
+.tarjeta h3 {
+  margin: 15px 0;
+  color: var(--oro-claro);
+  font-family: var(--fuente-cursiva);
+  font-size: clamp(45px, 5.2vw, 66px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.tarjeta-lugar {
+  margin: 15px 0 8px;
+  color: var(--marfil);
+  font-size: clamp(30px, 3vw, 38px);
+  line-height: 1.2;
+}
+
+.tarjeta-hora {
+  margin: 12px 0;
+  color: var(--oro-claro);
+  font-size: 48px;
+  line-height: 1;
+}
+
+.tarjeta-direccion {
+  max-width: 280px;
+  margin: 10px auto;
+  color: var(--gris);
+  font-family: var(--fuente-moderna);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* ======================================================
+   12. BOTONES PREMIUM
+====================================================== */
+
+.boton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+
+  margin-top: 29px;
+  padding: 15px 30px;
+
+  border: 1px solid var(--oro);
+
+  background:
+    linear-gradient(
+      125deg,
+      rgba(113, 42, 67, .65),
+      rgba(44, 19, 32, .9)
+    );
+
+  color: var(--oro-claro);
+
+  font-family: var(--fuente-moderna);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  line-height: 1.7;
+  text-align: center;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .23);
+
+  transition:
+    transform .3s ease,
+    background .3s ease,
+    box-shadow .3s ease,
+    color .3s ease;
+}
+
+.boton:hover,
+.boton:focus-visible {
+  transform: translateY(-3px);
+
+  background:
+    linear-gradient(
+      125deg,
+      #d6b57b,
+      #a4773b
+    );
+
+  box-shadow:
+    0 10px 30px rgba(201, 161, 93, .25);
+
+  color: #160e12;
+}
+
+/* ======================================================
+   13. GALERÍA CINEMATOGRÁFICA
+====================================================== */
+
+.galeria-seccion {
+  background:
+    radial-gradient(
+      ellipse at 50% 35%,
+      rgba(107, 31, 57, .4),
+      transparent 65%
+    ),
+    #100b10;
+}
+
+.galeria-imagen {
+  position: relative;
+  width: min(100%, 470px);
+  aspect-ratio: 3 / 4;
+
+  margin: 45px auto 0;
+  padding: 10px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--oro);
+  background: #1b1219;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, .65),
+    0 0 30px rgba(200, 162, 103, .12);
+}
+
+.galeria-imagen::after {
+  content: "";
+  position: absolute;
+  inset: 17px;
+  border: 1px solid rgba(223, 190, 131, .36);
+  pointer-events: none;
+}
+
+.galeria-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: aparecerFotografia .85s ease both;
+}
+
+.galeria-placeholder {
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      #512039,
+      #130c13 75%
+    );
+}
+
+.galeria-emblema {
+  width: 140px;
+  height: 80px;
+  opacity: .85;
+}
+
+.galeria-placeholder strong {
+  color: var(--oro-claro);
+  font-size: 120px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.galeria-placeholder p {
+  color: var(--gris);
+  font-size: 23px;
+}
+
+.galeria-controles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+
+  margin-top: 30px;
+}
+
+.galeria-controles button {
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(200, 162, 103, .7);
+  border-radius: 50%;
+
+  background: #261722;
+  color: var(--oro-claro);
+  font-size: 31px;
+  line-height: 1;
+
+  transition:
+    transform .3s,
+    background .3s;
+}
+
+.galeria-controles button:not(:disabled):hover {
+  transform: scale(1.08);
+  background: var(--vino);
+}
+
+.galeria-controles button:disabled {
+  opacity: .35;
+}
+
+#numeroFoto {
+  min-width: 45px;
+  color: var(--oro);
+  font-family: var(--fuente-moderna);
+  font-size: 12px;
+  letter-spacing: .15em;
+}
+
+/* ======================================================
+   14. LLUVIA DE SOBRES
+====================================================== */
+
+.regalos {
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(114, 39, 65, .39),
+      transparent 65%
+    ),
+    linear-gradient(
+      #120b10,
+      #301621,
+      #120b10
+    );
+}
+
+.regalo-marco {
+  position: relative;
+  max-width: 790px;
+  margin-inline: auto;
+  padding: 70px 38px;
+
+  border: 1px solid rgba(200, 162, 103, .65);
+
+  background:
+    linear-gradient(
+      140deg,
+      rgba(44, 23, 34, .85),
+      rgba(18, 12, 17, .88)
+    );
+
+  box-shadow:
+    0 25px 75px rgba(0, 0, 0, .4);
+}
+
+.regalo-marco::before {
+  content: "";
+  position: absolute;
+  inset: 11px;
+  border: 1px solid rgba(200, 162, 103, .28);
+  pointer-events: none;
+}
+
+.regalo-rosa {
+  position: absolute;
+  top: -50px;
+  right: -35px;
+  width: 130px;
+  height: 150px;
+  transform: rotate(20deg);
+  filter: drop-shadow(0 8px 12px #0008);
+  pointer-events: none;
+}
+
+.regalo-icono {
+  display: block;
+  margin-bottom: 20px;
+  color: var(--oro-claro);
+  font-size: 74px;
+  line-height: 1;
+  animation: flotarSuave 4s ease-in-out infinite;
+}
+
+/* ======================================================
+   15. CONFIRMACIÓN
+====================================================== */
+
+.confirmacion {
+  background:
+    radial-gradient(
+      ellipse at 50% 55%,
+      rgba(107, 36, 59, .27),
+      transparent 65%
+    ),
+    #100b10;
+}
+
+.boton-whatsapp {
+  margin-top: 38px;
+  padding-inline: 34px;
+}
+
+.confirmacion-nota {
+  margin: 19px auto 0;
+  color: var(--gris);
+  font-family: var(--fuente-moderna);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.cierre-imperial {
+  margin: 90px auto 0;
+}
+
+.cierre-emblema {
+  width: 145px;
+  height: 85px;
+  margin-inline: auto;
+}
+
+.nombre-final {
+  margin: 10px auto 0;
+  color: var(--oro-claro);
+  font-family: var(--fuente-cursiva);
+  font-size: clamp(65px, 9vw, 105px);
+  line-height: 1.2;
+  text-shadow: 0 0 25px rgba(201, 161, 93, .22);
+}
+
+.apellido-final {
+  margin: 5px auto;
+  color: var(--oro);
+  font-family: var(--fuente-moderna);
+  font-size: 12px;
+  letter-spacing: .34em;
+  line-height: 1.8;
+}
+
+.fecha-final {
+  margin: 30px auto 0;
+  color: var(--marfil);
+  font-family: var(--fuente-moderna);
+  font-size: 12px;
+  letter-spacing: .24em;
+}
+
+/* ======================================================
+   16. PIE DE PÁGINA
+====================================================== */
+
+.pie {
+  position: relative;
+  padding: 34px 20px 45px;
+
+  border-top: 1px solid rgba(200, 162, 103, .38);
+
+  background: #0b080c;
+  text-align: center;
+}
+
+.pie p {
+  margin: 0 0 9px;
+  color: var(--oro);
+  font-family: var(--fuente-moderna);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .25em;
+}
+
+.pie span {
+  color: var(--gris);
+  font-family: var(--fuente-moderna);
+  font-size: 10px;
+  letter-spacing: .2em;
+}
+
+/* ======================================================
+   17. BOTÓN FLOTANTE DE MÚSICA
+====================================================== */
+
+.control-musica {
+  position: fixed;
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  z-index: 100;
+
+  display: grid;
+  place-items: center;
+
+  width: 56px;
+  height: 56px;
+
+  border: 1px solid var(--oro);
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #56223b,
+      #21111e
+    );
+
+  color: var(--oro-claro);
+  font-size: 25px;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, .65),
+    0 0 18px rgba(201, 161, 93, .17);
+
+  transition:
+    transform .3s,
+    box-shadow .3s;
+}
+
+.control-musica:hover {
+  transform: scale(1.08);
+  box-shadow:
+    0 8px 25px #0009,
+    0 0 24px #c8a26755;
+}
+
+/* ======================================================
+   18. ANIMACIONES CINEMATOGRÁFICAS
+====================================================== */
+
+.revelar {
+  opacity: 0;
+  transform: translateY(40px);
+
+  transition:
+    opacity 1s var(--transicion),
+    transform 1s var(--transicion);
+}
+
+.revelar.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes aparecerFotografia {
+  from {
+    opacity: 0;
+    transform: scale(1.09);
+    filter: brightness(.7);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+@keyframes resplandorSuave {
+  from {
+    opacity: .55;
+    transform: translateX(-50%) scale(.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.17);
+  }
+}
+
+@keyframes flechaSuave {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: .7;
+  }
+
+  50% {
+    transform: translateY(8px);
+    opacity: 1;
+  }
+}
+
+@keyframes flotarSuave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+/* ======================================================
+   19. TABLETAS
+====================================================== */
+
+@media (max-width: 1000px) {
+
+  .portada {
+    padding-inline: 55px;
+    gap: 22px;
+  }
+
+  .portada-nombre {
+    font-size: clamp(62px, 7vw, 85px);
+  }
+
+  .portada-xv {
+    font-size: clamp(115px, 12vw, 150px);
+  }
+
+  .decoracion-charra {
+    width: 150px;
+    opacity: .55;
+  }
+
+  .flor-svg {
+    width: 145px;
+  }
+
+}
+
+/* ======================================================
+   20. CELULARES
+====================================================== */
+
+@media (max-width: 760px) {
+
+  body {
+    min-width: 0;
+  }
+
+  .seccion {
+    padding: 88px 20px;
+  }
+
+  .microtitulo {
+    font-size: 9px;
+    letter-spacing: .22em;
+  }
+
+  .titulo-seccion {
+    font-size: clamp(44px, 10vw, 65px);
+  }
+
+  .titulo-seccion em {
+    font-size: clamp(60px, 13vw, 90px);
+  }
+
+  /* PORTADA */
+
+  .portada {
+    min-height: 100svh;
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 65px 29px 80px;
+  }
+
+  .portada::after {
+    inset: 16px;
+  }
+
+  .portada-texto {
+    order: 2;
+  }
+
+  .ilustracion {
+    order: 1;
+    width: min(100%, 385px);
+    aspect-ratio: 3 / 3.65;
+    margin: 0 auto;
+  }
+
+  .portada-mis {
+    font-size: 65px;
+  }
+
+  .portada-xv {
+    font-size: 115px;
+  }
+
+  .portada-nombre {
+    font-size: clamp(61px, 12vw, 88px);
+  }
+
+  .portada-apellidos {
+    font-size: 10px;
+    letter-spacing: .22em;
+  }
+
+  .portada-fecha {
+    font-size: 10px;
+    letter-spacing: .1em;
+  }
+
+  .deslizar {
+    margin-top: 20px;
+  }
+
+  /* BORDADOS Y FLORES */
+
+  .decoracion-charra {
+    width: 112px;
+    opacity: .48;
+  }
+
+  .esquina-si {
+    top: 15px;
+    left: 15px;
+  }
+
+  .esquina-sd {
+    top: 15px;
+    right: 15px;
+  }
+
+  .esquina-ii {
+    bottom: 15px;
+    left: 15px;
+  }
+
+  .esquina-id {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .flor-svg {
+    width: 120px;
+    opacity: .8;
+  }
+
+  .flor-izquierda {
+    bottom: 3%;
+    left: -40px;
+  }
+
+  .flor-derecha {
+    top: 13%;
+    right: -40px;
+  }
+
+  /* MENSAJE */
+
+  .mensaje-marco {
+    padding: 48px 17px;
+  }
+
+  /* FECHA */
+
+  .fecha-grande {
+    gap: 14px;
+  }
+
+  .fecha-numero {
+    font-size: clamp(108px, 24vw, 154px);
+  }
+
+  .fecha-datos span {
+    font-size: clamp(23px, 5vw, 34px);
+  }
+
+  .fecha-datos strong {
+    font-size: clamp(43px, 9vw, 60px);
+  }
+
+  .fecha-localidad {
+    font-size: 10px;
+  }
+
+  .contador {
+    gap: 5px;
+  }
+
+  .contador > div {
+    padding: 17px 3px;
+  }
+
+  .contador strong {
+    font-size: clamp(27px, 6vw, 37px);
+  }
+
+  .contador span {
+    font-size: 8px;
+    letter-spacing: 0;
+  }
+
+  /* LUGARES */
+
+  .tarjetas {
+    grid-template-columns: 1fr;
+    gap: 27px;
+  }
+
+  .tarjeta {
+    min-height: 420px;
+    padding: 52px 24px 43px;
+  }
+
+  .tarjeta h3 {
+    font-size: 55px;
+  }
+
+  /* GALERÍA */
+
+  .galeria-imagen {
+    width: min(100%, 430px);
+  }
+
+  /* REGALOS */
+
+  .regalo-marco {
+    padding: 62px 25px;
+  }
+
+  .regalo-rosa {
+    top: -35px;
+    right: -30px;
+    width: 110px;
+  }
+
+  /* CIERRE */
+
+  .cierre-imperial {
+    margin-top: 75px;
+  }
+
+}
+
+/* ======================================================
+   21. PANTALLAS MUY PEQUEÑAS
+====================================================== */
+
+@media (max-width: 390px) {
+
+  .portada {
+    padding-inline: 24px;
+  }
+
+  .portada-mis {
+    font-size: 58px;
+  }
+
+  .portada-xv {
+    font-size: 100px;
+  }
+
+  .portada-nombre {
+    font-size: 57px;
+  }
+
+  .titulo-seccion em {
+    font-size: 59px;
+  }
+
+  .fecha-numero {
+    font-size: 100px;
+  }
+
+  .fecha-datos span {
+    font-size: 21px;
+  }
+
+  .fecha-datos strong {
+    font-size: 40px;
+  }
+
+  .contador strong {
+    font-size: 26px;
+  }
+
+  .tarjeta h3 {
+    font-size: 49px;
+  }
+
+  .regalo-marco {
+    padding-inline: 20px;
+  }
+
+  .sobre {
+    height: 215px;
+  }
+
+  .sobre-tapa {
+    height: 124px;
+  }
+
+}
+
+/* ======================================================
+   22. ACCESIBILIDAD: MOVIMIENTO REDUCIDO
+====================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .revelar {
+    opacity: 1;
+    transform: none;
+  }
+
+  .ilustracion img,
+  .portada.revelada .ilustracion img {
+    transform: none;
+  }
+
+  .tarjeta:hover {
+    transform: none;
+  }
+
+}
+
+/* ======================================================
+   FIN DE STYLE.CSS
+====================================================== */
